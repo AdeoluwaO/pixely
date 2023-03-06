@@ -38,6 +38,7 @@ dependencies:
 
   lottie: ^2.2.0
   tmdb_api:
+  google_fonts: ^4.0.3
 
 dev_dependencies:
   flutter_test:

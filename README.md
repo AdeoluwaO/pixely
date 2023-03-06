@@ -1,6 +1,8 @@
 # App Name
 Pixely
 
+# code is in the subbranch not the main branch
+
 #Note 
 this app is fully tested on android and should be run on
 the same os get full advantge with out bugs

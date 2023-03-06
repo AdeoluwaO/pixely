@@ -3,6 +3,7 @@ import 'package:flutter_app/screens/home_screen.dart';
 
 // local imports
 import './onboarding_widget.dart';
+import '../design-system/customtext/headline_text.dart';
 
 class FoodWidget extends StatelessWidget {
   const FoodWidget({Key? key}) : super(key: key);
@@ -27,16 +28,9 @@ class FoodWidget extends StatelessWidget {
                               builder: (context) => const Home()));
                     },
                     child: Container(
-                      margin: EdgeInsetsDirectional.only(
-                          top: MediaQuery.of(context).size.height * 0.15),
-                      child: const Text(
-                        'Get Started',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25,
-                        ),
-                      ),
-                    ),
+                        margin: EdgeInsetsDirectional.only(
+                            top: MediaQuery.of(context).size.height * 0.15),
+                        child: const HeadlineText(text: 'Get Started')),
                   ),
                 ],
               ),

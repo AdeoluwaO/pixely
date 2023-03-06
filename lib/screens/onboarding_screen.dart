@@ -16,44 +16,55 @@ class _OnboardingScreen extends State<OnboardingScreen> {
   final _controller = PageController();
   bool isVisible = true;
 
+  final List _pages = const [MovieWidget(), SpeakerWidget(), FoodWidget()];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: PageView(
+        body: PageView.builder(
             controller: _controller,
-            children: const [MovieWidget(), SpeakerWidget(), FoodWidget()]),
-      ),
-      bottomSheet: Visibility(
-        visible: isVisible,
-        child: Row(
-          children: [
-            TextButton(
-              child: const Text(
-                'skip',
-                style: TextStyle(fontSize: 26),
-              ),
-              onPressed: () {
-                _controller.jumpToPage(2);
-              },
-            ),
-            const Spacer(
-              flex: 1,
-            ),
-            TextButton(
-              child: const Text(
-                'next',
-                style: TextStyle(fontSize: 26),
-              ),
-              onPressed: () {
-                _controller.nextPage(
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.ease);
-              },
-            )
-          ],
-        ),
-      ),
-    );
+            itemCount: _pages.length,
+            itemBuilder: (_, index) {
+              return Container(
+                child: _pages[index],
+              );
+            })
+
+        //Container(
+        //child: PageView(
+        //  controller: _controller,
+        //children: const [MovieWidget(), SpeakerWidget(), FoodWidget()]),
+        //),
+        // bottomSheet: Visibility(
+        // visible: isVisible,
+        // child: Row(
+        // children: [
+        //  TextButton(
+        //  child: const Text(
+        //  'skip',
+        //style: TextStyle(fontSize: 26),
+        // ),
+        //onPressed: () {
+        //_controller.jumpToPage(2);
+        // },
+        //),
+        //const Spacer(
+        //flex: 1,
+        //),
+        //TextButton(
+        //child: const Text(
+        //'next',
+        //style: TextStyle(fontSize: 26),
+        //),
+        //onPressed: () {
+        //_controller.nextPage(
+        //  duration: const Duration(milliseconds: 300),
+        //curve: Curves.ease);
+        //},
+        //)
+        //],
+        //),
+        //),
+        );
   }
 }
