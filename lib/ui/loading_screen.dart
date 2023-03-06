@@ -17,7 +17,7 @@ class LoadingScreen extends StatelessWidget {
         children: const [
           OnboardingWidget(
               disable: true,
-              anim: 'assets/lottie_animations/human-loading-screen.json'),
+              anim: 'assets/lottie_animations/loading-wave.json'),
         ],
       ),
     );

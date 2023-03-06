@@ -6,7 +6,8 @@ class TvShows extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return Expanded(
+        child: ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: tvShows.length,
       itemBuilder: (context, index) {
@@ -35,6 +36,6 @@ class TvShows extends StatelessWidget {
               )),
         );
       },
-    );
+    ));
   }
 }

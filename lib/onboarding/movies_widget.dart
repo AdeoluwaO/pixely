@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 // local imports
 import './onboarding_widget.dart';
+import '../design-system/customtext/headline_text.dart';
+import '../design-system/customtext/subtext.dart';
 
 class MovieWidget extends StatelessWidget {
   const MovieWidget({super.key});
@@ -22,18 +24,13 @@ class MovieWidget extends StatelessWidget {
             child: Center(
               child: Column(
                 children: const [
-                  Text(
-                    'Watch Amazing Movies',
-                    style: TextStyle(
-                      fontSize: 20,
+                  HeadlineText(text: 'Watch Amazing Movies'),
+                  Center(
+                    child: SubText(
+                      text: 'Best series and Tv Shows',
+                      size: 16.0,
                     ),
                   ),
-                  Text(
-                    'worlds best movies \nat your finger tips',
-                    style: TextStyle(
-                      fontSize: 15,
-                    ),
-                  )
                 ],
               ),
             ),

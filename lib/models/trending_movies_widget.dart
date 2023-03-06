@@ -7,42 +7,36 @@ class TrendingMovies extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemCount: trendingMovies.length,
-      itemBuilder: (context, index) {
-        return InkWell(
-          onTap: () {},
-          child: Container(
-              width: 250,
-              margin: const EdgeInsets.only(left: 8, right: 8),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 170,
-                    height: 250,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(22),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                          'https://image.tmdb.org/t/p/w500' +
-                              trendingMovies[index]['poster_path'],
-                        ),
-                        fit: BoxFit.fill,
-                      ),
-                    ),
+    return Expanded(
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: trendingMovies.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            child: Column(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.network(
+                    'https://image.tmdb.org/t/p/w500' +
+                        trendingMovies[index]['poster_path'],
+                    height: 200,
+                    width: 400,
                   ),
-                  Text(
-                    trendingMovies[index]['title'],
+                ),
+                Text(trendingMovies[index]['title'],
                     style: const TextStyle(
                       fontSize: 12,
-                    ),
-                  )
-                ],
-              )),
-        );
-      },
+                    )),
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }
+
+
+// 'https://image.tmdb.org/t/p/w500' + trendingMovies[index]['poster_path']
+// Text( trendingMovies[index]['title'],  style: const TextStyle( fontSize: 12, ),

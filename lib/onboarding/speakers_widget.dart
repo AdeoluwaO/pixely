@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // local imports
 import './onboarding_widget.dart';
+import '../design-system/customtext/headline_text.dart';
 
 class SpeakerWidget extends StatelessWidget {
   const SpeakerWidget({Key? key}) : super(key: key);
@@ -18,13 +19,10 @@ class SpeakerWidget extends StatelessWidget {
                 anim: 'assets/lottie_animations/speakers-music.json'),
             Container(
               margin: EdgeInsets.symmetric(
-                  vertical: MediaQuery.of(context).size.height * 0.015),
+                  vertical: MediaQuery.of(context).size.height * 0.08),
               child: Center(
                 child: Column(children: const [
-                  Text(
-                    'Audio that makes you move',
-                    style: TextStyle(fontSize: 20),
-                  ),
+                  HeadlineText(text: 'Audios for the mood'),
                   Text(
                     'you can sleep on a beat \nall your faves are here!!!',
                     style: TextStyle(fontSize: 15),

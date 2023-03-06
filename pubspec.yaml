@@ -67,7 +67,7 @@ flutter:
   - assets/lottie_animations/metaverse-food-delivery.json
   - assets/lottie_animations/speakers-music.json
   - assets/lottie_animations/watch-a-movie-with-popcorn.json
-  - assets/lottie_animations/human-loading-screen.json
+  - assets/lottie_animations/loading-wave.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

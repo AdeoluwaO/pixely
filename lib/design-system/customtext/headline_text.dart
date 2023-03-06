@@ -7,12 +7,10 @@ class HeadlineText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text(
-        text,
-        style: GoogleFonts.lobster(
-          textStyle: const TextStyle(fontSize: 40),
-        ),
+    return Text(
+      text,
+      style: GoogleFonts.lobster(
+        textStyle: const TextStyle(fontSize: 40),
       ),
     );
   }
