@@ -14,6 +14,7 @@ class MovieWidget extends StatelessWidget {
       child: Column(
         children: [
           const OnboardingWidget(
+              disable: false,
               anim: 'assets/lottie_animations/watch-a-movie-with-popcorn.json'),
           Container(
             margin: EdgeInsets.symmetric(

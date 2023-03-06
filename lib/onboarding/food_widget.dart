@@ -14,6 +14,7 @@ class FoodWidget extends StatelessWidget {
         child: Column(
           children: [
             const OnboardingWidget(
+                disable: false,
                 anim: 'assets/lottie_animations/metaverse-food-delivery.json'),
             Container(
               child: Column(

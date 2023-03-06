@@ -14,6 +14,7 @@ class SpeakerWidget extends StatelessWidget {
         child: Column(
           children: [
             const OnboardingWidget(
+                disable: false,
                 anim: 'assets/lottie_animations/speakers-music.json'),
             Container(
               margin: EdgeInsets.symmetric(

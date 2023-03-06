@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 class OnboardingWidget extends StatelessWidget {
-  const OnboardingWidget({Key? key, required this.anim}) : super(key: key);
+  const OnboardingWidget({Key? key, required this.anim, required this.disable})
+      : super(key: key);
   final String anim;
+  final bool disable;
 
   @override
   // return type of this class must be a lottie builder
@@ -14,7 +16,7 @@ class OnboardingWidget extends StatelessWidget {
         bottomRight: Radius.circular(30),
       ),
       child: Container(
-        color: Colors.white,
+        color: disable ? null : Colors.white,
         child: Lottie.asset(
           anim,
           width: MediaQuery.of(context).size.width,

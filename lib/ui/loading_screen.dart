@@ -10,12 +10,13 @@ class LoadingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsetsDirectional.only(
-        top: MediaQuery.of(context).size.height * 0.3,
+        top: MediaQuery.of(context).size.height * 0.2,
         // bottom: MediaQuery.of(context).size.height * 0.5
       ),
       child: Column(
         children: const [
           OnboardingWidget(
+              disable: true,
               anim: 'assets/lottie_animations/human-loading-screen.json'),
         ],
       ),
