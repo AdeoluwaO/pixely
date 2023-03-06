@@ -22,10 +22,13 @@ class SpeakerWidget extends StatelessWidget {
               margin: EdgeInsets.symmetric(
                   vertical: MediaQuery.of(context).size.height * 0.08),
               child: Center(
-                child: Column(children: const [
-                  HeadlineText(text: 'Audios for the mood'),
-                  SubText(size: 18, text: 'All your faves are here')
-                ]),
+                child: Column(
+                  children: const [
+                    HeadlineText(text: 'Audios for the mood'),
+                    SubText(size: 18, text: 'All your faves are here'),
+                    Icon(size: 30.0, Icons.arrow_right_alt),
+                  ],
+                ),
               ),
             ),
           ],

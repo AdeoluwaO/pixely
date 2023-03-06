@@ -31,6 +31,7 @@ class MovieWidget extends StatelessWidget {
                       size: 19,
                     ),
                   ),
+                  Icon(size: 30.0, Icons.arrow_right_alt),
                 ],
               ),
             ),
