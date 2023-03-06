@@ -11,17 +11,15 @@ class SpeakerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        margin: EdgeInsets.symmetric(
-            vertical: MediaQuery.of(context).size.height * 0.06),
         child: Column(
           children: [
-            OnboardingWidget(
+            const OnboardingWidget(
                 anim: 'assets/lottie_animations/speakers-music.json'),
             Container(
               margin: EdgeInsets.symmetric(
                   vertical: MediaQuery.of(context).size.height * 0.015),
               child: Center(
-                child: Column(children: [
+                child: Column(children: const [
                   Text(
                     'Audio that makes you move',
                     style: TextStyle(fontSize: 20),

@@ -4,25 +4,23 @@ import 'package:flutter/material.dart';
 import './onboarding_widget.dart';
 
 class MovieWidget extends StatelessWidget {
-  const MovieWidget({Key? key});
+  const MovieWidget({super.key});
 
 // uses the onboarding widget to dispaly animation
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Container(
-      margin: EdgeInsets.symmetric(
-          vertical: MediaQuery.of(context).size.height * 0.12),
       child: Column(
         children: [
-          OnboardingWidget(
+          const OnboardingWidget(
               anim: 'assets/lottie_animations/watch-a-movie-with-popcorn.json'),
           Container(
             margin: EdgeInsets.symmetric(
                 vertical: MediaQuery.of(context).size.height * 0.08),
             child: Center(
               child: Column(
-                children: [
+                children: const [
                   Text(
                     'Watch Amazing Movies',
                     style: TextStyle(

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../utils/export_utils.dart' as fetch;
 import '../models/trending_movies_widget.dart';
 import '../models/latest_tv_shows.dart';
+import '../ui/loading_screen.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -13,22 +14,26 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  // api data is set this lists
   List trendingMovies = [];
   List tvShows = [];
+  // for validating the api if the data if fetched or not
   bool isLoading = true;
   bool isDone = false;
 
+// fetching from an api once page is mounted
   @override
   void initState() {
     fetchingMovies();
     super.initState();
   }
 
+// disposes the api call ones the page is close
   @override
   void dispose() {
     fetchingMovies();
-    isLoading;
-    isDone;
+    fetch.fecthMovies();
+    fetch.fecthTvShows();
     super.dispose();
   }
 
@@ -45,7 +50,6 @@ class _HomeState extends State<Home> {
 
       trendingMovies = movies['results'];
       tvShows = tvShowResponse['results'];
-      print(tvShows);
     });
   }
 
@@ -57,9 +61,11 @@ class _HomeState extends State<Home> {
                 margin: EdgeInsetsDirectional.only(
                     top: MediaQuery.of(context).size.height * 0.06),
                 child: TrendingMovies(trendingMovies: trendingMovies))
-            : Center(
-                child: Text('Getting Data...'),
+            : const Center(
+                child: LoadingScreen(),
               )
+        // will work on later
+        // having issues with nesting scrollviews
         //TvShows(tvShows: tvShows)
         );
   }

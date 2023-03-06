@@ -8,6 +8,19 @@ class OnboardingWidget extends StatelessWidget {
   @override
   // return type of this class must be a lottie builder
   Widget build(BuildContext context) {
-    return Lottie.asset(anim);
+    return ClipRRect(
+      borderRadius: const BorderRadius.only(
+        bottomLeft: Radius.circular(30),
+        bottomRight: Radius.circular(30),
+      ),
+      child: Container(
+        color: Colors.white,
+        child: Lottie.asset(
+          anim,
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height * 0.6,
+        ),
+      ),
+    );
   }
 }

@@ -15,7 +15,7 @@ class TrendingMovies extends StatelessWidget {
           onTap: () {},
           child: Container(
               width: 250,
-              margin: EdgeInsets.only(left: 8, right: 8),
+              margin: const EdgeInsets.only(left: 8, right: 8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -35,7 +35,7 @@ class TrendingMovies extends StatelessWidget {
                   ),
                   Text(
                     trendingMovies[index]['title'],
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 12,
                     ),
                   )

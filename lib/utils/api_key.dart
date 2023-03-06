@@ -7,7 +7,7 @@ const String readAccessToken =
 Future fecthMovies() async {
   final tmbdConfig = TMDB(
     ApiKeys(apiKey, readAccessToken),
-    logConfig: ConfigLogger(showLogs: true, showErrorLogs: true),
+    logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true),
   );
   Map results = await tmbdConfig.v3.movies.getTopRated();
   return results;
@@ -17,7 +17,7 @@ Future fecthMovies() async {
 Future fecthMoviesVideo() async {
   final tmbdConfig = TMDB(
     ApiKeys(apiKey, readAccessToken),
-    logConfig: ConfigLogger(showLogs: true, showErrorLogs: true),
+    logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true),
   );
   Map results = await tmbdConfig.v3.movies.getTopRated();
   return results;
@@ -26,7 +26,7 @@ Future fecthMoviesVideo() async {
 Future fecthTvShows() async {
   final tmbdConfig = TMDB(
     ApiKeys(apiKey, readAccessToken),
-    logConfig: ConfigLogger(showLogs: true, showErrorLogs: true),
+    logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true),
   );
   Map results = await tmbdConfig.v3.tv.getTopRated();
   return results;

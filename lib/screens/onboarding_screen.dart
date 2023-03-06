@@ -4,10 +4,6 @@ import 'package:flutter/material.dart';
 import '../onboarding/speakers_widget.dart';
 import '../onboarding/food_widget.dart';
 import '../onboarding/movies_widget.dart';
-import '../onboarding/onboarding_widget.dart';
-
-// for test only
-import './home_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -26,14 +22,14 @@ class _OnboardingScreen extends State<OnboardingScreen> {
       body: Container(
         child: PageView(
             controller: _controller,
-            children: [MovieWidget(), SpeakerWidget(), FoodWidget()]),
+            children: const [MovieWidget(), SpeakerWidget(), FoodWidget()]),
       ),
       bottomSheet: Visibility(
         visible: isVisible,
         child: Row(
           children: [
             TextButton(
-              child: Text(
+              child: const Text(
                 'skip',
                 style: TextStyle(fontSize: 26),
               ),
@@ -41,17 +37,18 @@ class _OnboardingScreen extends State<OnboardingScreen> {
                 _controller.jumpToPage(2);
               },
             ),
-            Spacer(
+            const Spacer(
               flex: 1,
             ),
             TextButton(
-              child: Text(
+              child: const Text(
                 'next',
                 style: TextStyle(fontSize: 26),
               ),
               onPressed: () {
                 _controller.nextPage(
-                    duration: Duration(milliseconds: 300), curve: Curves.ease);
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.ease);
               },
             )
           ],

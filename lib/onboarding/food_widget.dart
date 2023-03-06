@@ -11,24 +11,24 @@ class FoodWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        margin: EdgeInsets.symmetric(
-            vertical: MediaQuery.of(context).size.height * 0.16),
         child: Column(
           children: [
-            OnboardingWidget(
+            const OnboardingWidget(
                 anim: 'assets/lottie_animations/metaverse-food-delivery.json'),
             Container(
               child: Column(
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Home()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Home()));
                     },
                     child: Container(
                       margin: EdgeInsetsDirectional.only(
-                          top: MediaQuery.of(context).size.height * 0.30),
-                      child: Text(
+                          top: MediaQuery.of(context).size.height * 0.15),
+                      child: const Text(
                         'Get Started',
                         style: TextStyle(
                           color: Colors.white,

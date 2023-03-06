@@ -1,16 +1,18 @@
-# flutter_app
+# App Name
+Pixley
 
-A new Flutter project.
+#Note 
+this app is fully tested on android and should be run on
+the same os get its full advantge,
+nit tested on ios it might have a few bugs if runned on ios
+
+Please note that the Api Key was left in on purpose to give you access to the Api 
+can be removed later 
 
 ## Getting Started
+Open root directory and run flutter run
+the build apk file will be installed 
+named Pixley(app name)
+you will be met by the onboarding screen 
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

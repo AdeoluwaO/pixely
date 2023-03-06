@@ -13,8 +13,8 @@ class TvShows extends StatelessWidget {
         return InkWell(
           onTap: () {},
           child: Container(
-              padding: EdgeInsets.only(top: 6),
-              margin: EdgeInsets.symmetric(horizontal: 2, vertical: 0),
+              padding: const EdgeInsets.only(top: 6),
+              margin: const EdgeInsets.symmetric(horizontal: 2, vertical: 0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
