@@ -60,23 +60,14 @@ class _HomeState extends State<Home> {
             ? Container(
                 margin: EdgeInsetsDirectional.only(
                     top: MediaQuery.of(context).size.height * 0.06),
-                child:
-                    //   ListView(scrollDirection: Axis.vertical, children: [
-                    Column(
+                child: Column(
                   children: [
                     TvShows(tvShows: tvShows),
                     TrendingMovies(trendingMovies: trendingMovies)
                   ],
-                )
-                // ]),
-                )
+                ))
             : const Center(
                 child: LoadingScreen(),
-              )
-        // will work on later
-        // having issues with nesting scrollviews
-        //TvShows(tvShows: tvShows)
-        //TrendingMovies(trendingMovies: trendingMovies)
-        );
+              ));
   }
 }

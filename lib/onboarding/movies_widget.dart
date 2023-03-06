@@ -28,7 +28,7 @@ class MovieWidget extends StatelessWidget {
                   Center(
                     child: SubText(
                       text: 'Best series and Tv Shows',
-                      size: 16.0,
+                      size: 19,
                     ),
                   ),
                 ],

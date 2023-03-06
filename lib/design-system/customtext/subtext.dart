@@ -9,7 +9,7 @@ class SubText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      'Testing',
+      text,
       style: GoogleFonts.caveat(
         textStyle: TextStyle(fontSize: size),
       ),

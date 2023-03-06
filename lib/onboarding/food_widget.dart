@@ -30,7 +30,22 @@ class FoodWidget extends StatelessWidget {
                     child: Container(
                         margin: EdgeInsetsDirectional.only(
                             top: MediaQuery.of(context).size.height * 0.15),
-                        child: const HeadlineText(text: 'Get Started')),
+                        child: Column(
+                          children: [
+                            const HeadlineText(text: 'Get Started'),
+                            IconButton(
+                                iconSize: 40,
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const Home(),
+                                    ),
+                                  );
+                                },
+                                icon: Icon(Icons.arrow_forward_ios))
+                          ],
+                        )),
                   ),
                 ],
               ),

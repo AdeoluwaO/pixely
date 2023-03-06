@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // local imports
 import './onboarding_widget.dart';
 import '../design-system/customtext/headline_text.dart';
+import '../design-system/customtext/subtext.dart';
 
 class SpeakerWidget extends StatelessWidget {
   const SpeakerWidget({Key? key}) : super(key: key);
@@ -23,10 +24,7 @@ class SpeakerWidget extends StatelessWidget {
               child: Center(
                 child: Column(children: const [
                   HeadlineText(text: 'Audios for the mood'),
-                  Text(
-                    'you can sleep on a beat \nall your faves are here!!!',
-                    style: TextStyle(fontSize: 15),
-                  )
+                  SubText(size: 18, text: 'All your faves are here')
                 ]),
               ),
             ),
