@@ -1,22 +1,24 @@
 # App Name
 Pixely
 
-# code is in the subbranch not the main branch
+# all code is in the subbranch not the main branch
 
 #Note 
 this app is fully tested on android and should be run on
-the same os get full advantge with out bugs
-if tested on ios it might have a few bugs 
+the same operating system to get full advantge 
+without bugs
+if tested on ios there might be a few bugs 
 
 the branch was set to a subbranch in git on purpose 
-the app ui screens aren't ready yet will be pushed to main when ready 
+the app screens aren't fully ready 
+yet will be pushed to main when ready 
 
-Please note that the Api Key was left in on purpose 
+Please note that the Api Key was left in an open file on purpose 
 to give you access to the Api can be removed later 
 
 ## Getting Started 
 Open root directory and run "flutter run"
-apk file will be installed 
+an apk file will be installed 
 named Pixely(app name)
 you will be met by the onboarding screen 
 scroll down to the get started screen click
