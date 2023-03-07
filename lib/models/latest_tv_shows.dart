@@ -11,12 +11,12 @@ class TvShows extends StatelessWidget {
     return Column(
       children: [
         Container(
+          margin: const EdgeInsets.fromLTRB(4.0, 5.0, 4.0, 0.0),
           child: GestureDetector(
             onTap: () {},
             child: Image.network(
               'https://image.tmdb.org/t/p/w500' + image,
-              height: 170,
-              width: 100,
+              height: 200,
             ),
           ),
         ),

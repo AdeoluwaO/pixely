@@ -56,7 +56,6 @@ class _HomeState extends State<Home> {
       tvShows = tvShowResponse['results'];
       trending = trends['results'];
     });
-    print(trending);
   }
 
   @override
@@ -96,7 +95,7 @@ class _HomeState extends State<Home> {
                       ),
                       const HeadlineText(text: 'Tv Shows'),
                       SizedBox(
-                        height: 200,
+                        height: 230,
                         child: ListView.builder(
                           physics: const ClampingScrollPhysics(),
                           shrinkWrap: true,
@@ -142,15 +141,6 @@ class _HomeState extends State<Home> {
                   ),
                 ),
               )
-            //Container(
-            //margin: EdgeInsetsDirectional.only(
-            //  top: MediaQuery.of(context).size.height * 0.06),
-            //child: Column(
-            // children: [
-            //TvShows(tvShows: tvShows),
-            // TrendingMovies(trendingMovies: trendingMovies)
-            // ],
-            // ))
             : const Center(
                 child: LoadingScreen(),
               ));

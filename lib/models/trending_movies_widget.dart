@@ -23,7 +23,3 @@ class TrendingMovies extends StatelessWidget {
     ]);
   }
 }
-
-
-// 'https://image.tmdb.org/t/p/w500' + trendingMovies[index]['poster_path']
-// Text( trendingMovies[index]['title'],  style: const TextStyle( fontSize: 12, ),
