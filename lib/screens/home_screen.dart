@@ -87,6 +87,8 @@ class _HomeState extends State<Home> {
                                     Trending(
                                       image: trending[index]["poster_path"],
                                       name: trending[index]["name"],
+                                      backDrop: trending[index]
+                                          ["backdrop_path"],
                                     ),
                                   ],
                                 ),
