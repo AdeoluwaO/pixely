@@ -11,7 +11,7 @@ class TvShows extends StatelessWidget {
         onTap: () {},
         child: Image.network(
           'https://image.tmdb.org/t/p/w500' + image,
-          height: 200,
+          height: 170,
           width: 100,
         ),
       ),

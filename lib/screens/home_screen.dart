@@ -70,7 +70,7 @@ class _HomeState extends State<Home> {
                     children: [
                       const HeadlineText(text: 'Tv Shows'),
                       SizedBox(
-                        height: 300,
+                        height: 190,
                         child: ListView.builder(
                           physics: const ClampingScrollPhysics(),
                           shrinkWrap: true,
