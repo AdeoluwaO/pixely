@@ -19,5 +19,6 @@ Open root directory and run flutter run
 the build apk file will be installed 
 named Pixely(app name)
 you will be met by the onboarding screen 
-
-
+scroll down to the get started screen click
+the data fetches from the API
+you can them tap on each movie to read it's details 
