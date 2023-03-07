@@ -18,7 +18,7 @@ class TrendingMovies extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Container(
-        margin: const EdgeInsets.fromLTRB(4.0, 10.0, 4.0, 0.0),
+        margin: const EdgeInsets.fromLTRB(12.0, 10.0, 4.0, 0.0),
         child: GestureDetector(
           onTap: () {
             Navigator.push(

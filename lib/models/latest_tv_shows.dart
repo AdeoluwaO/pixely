@@ -19,7 +19,7 @@ class TvShows extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.fromLTRB(4.0, 5.0, 4.0, 0.0),
+          margin: const EdgeInsets.fromLTRB(12.0, 5.0, 4.0, 0.0),
           child: GestureDetector(
 // will add tap gesture for page backdropimage error
             onTap: () {},

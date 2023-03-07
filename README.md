@@ -14,12 +14,12 @@ the app ui screens aren't ready yet will be pushed to main when ready
 Please note that the Api Key was left in on purpose to give you access to the Api 
 can be removed later 
 
-## Getting Started
+## Getting Started (Please Read)
 Open root directory and run flutter run
 the build apk file will be installed 
 named Pixely(app name)
 you will be met by the onboarding screen 
 scroll down to the get started screen click
-the data fetches from the API
+the data fetches from the API (it might take a litte while before the data is fetched depending on connection)
 you can them tap on each movie to read it's details (for now only the trending and trending mmovies are tappable)
 will add for Tv Show section later
