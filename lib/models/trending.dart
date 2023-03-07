@@ -33,12 +33,12 @@ class Trending extends StatelessWidget {
               );
             },
             child: Image.network(
-              'https://image.tmdb.org/t/p/w500' + image,
+              'https://image.tmdb.org/t/p/w500$image',
               height: 400,
             ),
           ),
         ),
-        Text(name == null ? 'Loading..' : name.toString()),
+        Text(name == null ? 'Loading...' : name.toString()),
       ],
     );
   }

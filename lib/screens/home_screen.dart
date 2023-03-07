@@ -110,6 +110,7 @@ class _HomeState extends State<Home> {
                                   TvShows(
                                     image: tvShows[index]['poster_path'],
                                     name: tvShows[index]['name'],
+                                    backDrop: tvShows[index]["backdrop_path"],
                                   ),
                                 ],
                               ),
@@ -132,6 +133,8 @@ class _HomeState extends State<Home> {
                                   TrendingMovies(
                                     image: trendingMovies[index]['poster_path'],
                                     title: trendingMovies[index]['title'],
+                                    backDrop: trendingMovies[index]
+                                        ["backdrop_path"],
                                   ),
                                 ],
                               ),

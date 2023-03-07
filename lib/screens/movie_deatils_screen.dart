@@ -7,22 +7,25 @@ class MovieDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ScreenHeight = MediaQuery.of(context).size.height;
+    final screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
         body: Column(
           children: [
             Stack(
               children: [
+                // background image
                 Image.network(
-                    'https://image.tmdb.org/t/p/w500' + image.toString()),
+                  'https://image.tmdb.org/t/p/w500$image',
+                ),
                 Center(
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(
-                        0, ScreenHeight * 0.20, ScreenHeight * 0.33, 0),
+                        0, screenHeight * 0.20, screenHeight * 0.33, 0),
                     child: Container(
+                      // profile image
                       child: Image.network(
-                        'https://image.tmdb.org/t/p/w500' + subImage.toString(),
+                        'https://image.tmdb.org/t/p/w500$subImage',
                         height: 100,
                         width: 200,
                       ),

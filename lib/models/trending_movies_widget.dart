@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 
+// local imports
+import '../screens/movie_deatils_screen.dart';
+
 class TrendingMovies extends StatelessWidget {
   final String image;
   final String title;
-  const TrendingMovies({Key? key, required this.image, required this.title})
+  final String backDrop;
+  const TrendingMovies(
+      {Key? key,
+      required this.image,
+      required this.title,
+      required this.backDrop})
       : super(key: key);
 
   @override
@@ -12,9 +20,19 @@ class TrendingMovies extends StatelessWidget {
       Container(
         margin: const EdgeInsets.fromLTRB(4.0, 10.0, 4.0, 0.0),
         child: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MovieDetails(
+                  image: backDrop,
+                  subImage: image.toString(),
+                ),
+              ),
+            );
+          },
           child: Image.network(
-            'https://image.tmdb.org/t/p/w500' + image,
+            'https://image.tmdb.org/t/p/w500$image',
             height: 300,
           ),
         ),

@@ -43,7 +43,7 @@ class FoodWidget extends StatelessWidget {
                                     ),
                                   );
                                 },
-                                icon: Icon(Icons.arrow_drop_down_circle))
+                                icon: const Icon(Icons.arrow_drop_down_circle))
                           ],
                         )),
                   ),

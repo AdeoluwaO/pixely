@@ -21,4 +21,5 @@ named Pixely(app name)
 you will be met by the onboarding screen 
 scroll down to the get started screen click
 the data fetches from the API
-you can them tap on each movie to read it's details 
+you can them tap on each movie to read it's details (for now only the trending and trending mmovies are tappable)
+will add for Tv Show section later
