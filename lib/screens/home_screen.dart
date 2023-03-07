@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../utils/export_utils.dart' as fetch;
 import '../models/trending_movies_widget.dart';
 import '../models/latest_tv_shows.dart';
+import '../models/trending.dart';
 import '../ui/loading_screen.dart';
 import '../design-system/customtext/headline_text.dart';
 
@@ -18,6 +19,7 @@ class _HomeState extends State<Home> {
   // api data is set this lists
   List trendingMovies = [];
   List tvShows = [];
+  List trending = [];
   // for validating the api if the data if fetched or not
   bool isLoading = true;
   bool isDone = false;
@@ -29,10 +31,11 @@ class _HomeState extends State<Home> {
     super.initState();
   }
 
-// disposes the api call ones the page is close
+// disposes the api call ones the page is destroyed
   @override
   void dispose() {
     fetchingMovies();
+    fetch.fetchTrending();
     fetch.fecthMovies();
     fetch.fecthTvShows();
     super.dispose();
@@ -42,8 +45,8 @@ class _HomeState extends State<Home> {
     isLoading;
     var movies = await fetch.fecthMovies();
     var tvShowResponse = await fetch.fecthTvShows();
+    var trends = await fetch.fetchTrending();
     !isLoading;
-    //print(tvShowResponse);
     setState(() {
       if (isLoading) {
         isDone = true;
@@ -51,7 +54,9 @@ class _HomeState extends State<Home> {
 
       trendingMovies = movies['results'];
       tvShows = tvShowResponse['results'];
+      trending = trends['results'];
     });
+    print(trending);
   }
 
   @override
@@ -68,9 +73,30 @@ class _HomeState extends State<Home> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      const HeadlineText(text: 'Trending'),
+                      SizedBox(
+                        height: 450,
+                        child: ListView.builder(
+                            physics: const ClampingScrollPhysics(),
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemCount: trending.length,
+                            itemBuilder: (_, index) {
+                              return Container(
+                                child: Column(
+                                  children: [
+                                    Trending(
+                                      image: trending[index]["poster_path"],
+                                      name: trending[index]["name"],
+                                    ),
+                                  ],
+                                ),
+                              );
+                            }),
+                      ),
                       const HeadlineText(text: 'Tv Shows'),
                       SizedBox(
-                        height: 190,
+                        height: 200,
                         child: ListView.builder(
                           physics: const ClampingScrollPhysics(),
                           shrinkWrap: true,
@@ -80,8 +106,10 @@ class _HomeState extends State<Home> {
                             return Container(
                               child: Column(
                                 children: [
-                                  TvShows(image: tvShows[index]['poster_path']),
-                                  Text(tvShows[index]['name']),
+                                  TvShows(
+                                    image: tvShows[index]['poster_path'],
+                                    name: tvShows[index]['name'],
+                                  ),
                                 ],
                               ),
                             );
@@ -90,7 +118,7 @@ class _HomeState extends State<Home> {
                       ),
                       const HeadlineText(text: 'Trending Movies'),
                       SizedBox(
-                        height: 500,
+                        height: 350,
                         child: ListView.builder(
                           physics: const ClampingScrollPhysics(),
                           shrinkWrap: true,
@@ -101,9 +129,9 @@ class _HomeState extends State<Home> {
                               child: Column(
                                 children: [
                                   TrendingMovies(
-                                      image: trendingMovies[index]
-                                          ['poster_path']),
-                                  Text(trendingMovies[index]['title']),
+                                    image: trendingMovies[index]['poster_path'],
+                                    title: trendingMovies[index]['title'],
+                                  ),
                                 ],
                               ),
                             );

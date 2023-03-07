@@ -31,3 +31,12 @@ Future fecthTvShows() async {
   Map results = await tmbdConfig.v3.tv.getTopRated();
   return results;
 }
+
+Future fetchTrending() async {
+  final tmbdConfig = TMDB(
+    ApiKeys(apiKey, readAccessToken),
+    logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true),
+  );
+  Map results = await tmbdConfig.v3.trending.getTrending();
+  return results;
+}
