@@ -5,6 +5,7 @@ import '../utils/export_utils.dart' as fetch;
 import '../models/trending_movies_widget.dart';
 import '../models/latest_tv_shows.dart';
 import '../ui/loading_screen.dart';
+import '../design-system/customtext/headline_text.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -57,15 +58,71 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: isDone
-            ? Container(
-                margin: EdgeInsetsDirectional.only(
-                    top: MediaQuery.of(context).size.height * 0.06),
-                child: Column(
-                  children: [
-                    TvShows(tvShows: tvShows),
-                    TrendingMovies(trendingMovies: trendingMovies)
-                  ],
-                ))
+            ? SafeArea(
+                child: SingleChildScrollView(
+                  padding: EdgeInsets.symmetric(
+                    vertical: MediaQuery.of(context).size.height * 0.02,
+                    horizontal: MediaQuery.of(context).size.height * 0.01,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const HeadlineText(text: 'Tv Shows'),
+                      SizedBox(
+                        height: 300,
+                        child: ListView.builder(
+                          physics: const ClampingScrollPhysics(),
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemCount: tvShows.length,
+                          itemBuilder: (_, index) {
+                            return Container(
+                              child: Column(
+                                children: [
+                                  TvShows(image: tvShows[index]['poster_path']),
+                                  Text(tvShows[index]['name']),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                      const HeadlineText(text: 'Trending Movies'),
+                      SizedBox(
+                        height: 500,
+                        child: ListView.builder(
+                          physics: const ClampingScrollPhysics(),
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemCount: trendingMovies.length,
+                          itemBuilder: (_, index) {
+                            return Container(
+                              child: Column(
+                                children: [
+                                  TrendingMovies(
+                                      image: trendingMovies[index]
+                                          ['poster_path']),
+                                  Text(trendingMovies[index]['title']),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            //Container(
+            //margin: EdgeInsetsDirectional.only(
+            //  top: MediaQuery.of(context).size.height * 0.06),
+            //child: Column(
+            // children: [
+            //TvShows(tvShows: tvShows),
+            // TrendingMovies(trendingMovies: trendingMovies)
+            // ],
+            // ))
             : const Center(
                 child: LoadingScreen(),
               ));
