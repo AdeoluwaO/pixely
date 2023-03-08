@@ -17,6 +17,8 @@ Please note that the Api Key was left in an open file on purpose
 to give you access to the Api can be removed later 
 
 ## Getting Started 
+Please note application can be slow because it's in debug mode 
+
 Open root directory and run "flutter run"
 an apk file will be installed 
 named Pixely(app name)
